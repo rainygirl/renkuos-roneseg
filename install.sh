@@ -5,11 +5,11 @@ cd "$(dirname "$0")"
 [ "$(uname)" = Haiku ] || { echo "Run this on Haiku." >&2; exit 1; }
 arch=$(getarch -p)
 case "$arch" in
-    x86_gcc2) devel=libiconv_x86_devel; crypto=openssl3_x86 ;;
-    x86|x86_64) devel=libiconv_devel; crypto=openssl3 ;;
+    x86_gcc2) devel=libiconv_x86_devel; crypto_devel=openssl3_x86_devel ;;
+    x86|x86_64) devel=libiconv_devel; crypto_devel=openssl3_devel ;;
     *) echo "Unsupported architecture: $arch" >&2; exit 1 ;;
 esac
-pkgman install -y -R "$devel" "$crypto" cmd:python3
+pkgman install -y -R "$devel" "$crypto_devel"
 output=$(mktemp -d /tmp/roneseg-install.XXXXXX)
 trap 'rm -rf "$output"' EXIT HUP INT TERM
 sh packaging/build.sh "$output"

@@ -9,7 +9,7 @@
 int main(int argc, char** argv)
 {
 	if (argc != 4) {
-		fprintf(stderr, "usage: decoder_test SESSION.json CAPTURE.enc OUTPUT.ts\n");
+		fprintf(stderr, "usage: decoder_test SESSION.bin CAPTURE.enc OUTPUT.ts\n");
 		return 2;
 	}
 	FILE* input = fopen(argv[2], "rb");

@@ -7,7 +7,7 @@
 
 class UsbTuner;
 
-// Local child process: recovered link protocol and native OpenSSL, isolated
+// Native C++ child process: recovered link protocol and OpenSSL, isolated
 // from the GUI. No Windows code or network transport. One caller at a time.
 class LeiraDecoder {
 public:

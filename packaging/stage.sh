@@ -4,7 +4,8 @@ set -eu
 cd "$(dirname "$0")/.."
 prefix=$1
 binary=$2
-python3 -I -B packaging/check_payload.py data
+native="$(dirname "$binary")/oneseg_decoder"
+"$native" --check-data data
 mkdir -p "$prefix/apps" "$prefix/data/roneseg/decoder" \
     "$prefix/data/deskbar/menu/Applications" "$prefix/documentation/packages/roneseg/captures"
 cp "$binary" "$prefix/apps/ROneSeg"
@@ -14,9 +15,7 @@ for name in oneseg_fw.rec oneseg_demod.bin link-auth.bin; do
     cp "data/$name" "$prefix/data/roneseg/$name"
     chmod 644 "$prefix/data/roneseg/$name"
 done
-for name in native_session.py link_cipher.py transport.py receiver_worker.py run; do
-    cp "decoder/$name" "$prefix/data/roneseg/decoder/$name"
-done
+cp "$native" "$prefix/data/roneseg/decoder/run"
 chmod 755 "$prefix/data/roneseg/decoder/run"
 ln -s ../../../../apps/ROneSeg "$prefix/data/deskbar/menu/Applications/R One-Seg"
 cp README.md README.ko.md README.en.md icon.png "$prefix/documentation/packages/roneseg/"

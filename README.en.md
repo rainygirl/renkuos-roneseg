@@ -30,7 +30,7 @@ curl -fsSL https://pkgman.rainygirl.com/install-all.sh | sh -s -- roneseg_x86
 To install from source:
 
 ```sh
-git clone https://github.com/rainygirl/haiku-roneseg.git
+git clone https://github.com/rainygirl/renkuos-roneseg.git
 cd haiku-roneseg
 ./install.sh
 ```

@@ -52,4 +52,6 @@ finishes, open **R One-Seg** from Deskbar.
 
 ## AI disclosure
 
-This program was developed with the assistance of Claude Code and Codex.
+Parts of R One-Seg were developed with the assistance of AI coding tools
+(Anthropic's Claude and OpenAI Codex). All code has been reviewed and tested by
+the author.

@@ -47,6 +47,7 @@ cd haiku-roneseg
 | Command-U | USB デバイスの報告 |
 | Command-. | 停止 |
 
-## AI 利用について
+## AI の利用について
 
-このプログラムは Claude Code と Codex を活用して開発しました。
+R One-Seg の一部は AI コーディングツール (Anthropic の Claude および OpenAI Codex) の支援を受けて開発しました。
+すべてのコードは作者がレビューし、テストしています。
